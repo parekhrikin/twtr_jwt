@@ -17,9 +17,9 @@ function Home(props) {
   const { classes } = props;
 
   return (
-      <div className={classes.root}>
-        <h1>Devops</h1>
-      </div>
+    <div className={classes.root}>
+      <h1>Jayesh Rikin Landing Page</h1>
+    </div>
   );
 }
 

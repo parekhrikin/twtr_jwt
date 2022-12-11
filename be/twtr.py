@@ -32,7 +32,7 @@ g = dict()
 
 # mongo
 #mongo_client = MongoClient('mongodb://localhost:27017/')
-mongo_client = MongoClient("mongodb+srv://gautham:gautham@cluster0.9mcyw.mongodb.net/tweets?retryWrites=true&w=majority")
+mongo_client = MongoClient("mongodb+srv://rikin1234:rikin1234@tetra.dksendd.mongodb.net/test")
 class MyMongo(object):
     def __init__(self, db_name):
         self.db_name = db_name

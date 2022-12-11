@@ -17,7 +17,7 @@ services:
       - 5004:5000
     environment:
       - FLASK_ENV=development
-      - DATABASE_URL=mongodb+srv://gautham:gautham@cluster0.9mcyw.mongodb.net/tweets?retryWrites=true&w=majority
+      - DATABASE_URL=mongodb+srv://rikin1234:rikin1234@tetra.dksendd.mongodb.net/test
       - DATABASE_TEST_URL=mongodb://localhost:27017/
     networks:
       - backend
