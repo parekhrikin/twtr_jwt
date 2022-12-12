@@ -14,16 +14,16 @@ import { Link } from 'react-router-dom'
 const localStorageAuthKey = 'twtr:auth';
 function getAccessToken() {
   if (typeof Storage !== 'undefined') {
-      try {
-        var keys = JSON.parse(localStorage.getItem(localStorageAuthKey));
-        return keys.access;
-        // the refresh token is keys.refresh
+    try {
+      var keys = JSON.parse(localStorage.getItem(localStorageAuthKey));
+      return keys.access;
+      // the refresh token is keys.refresh
 
-      } catch (ex) {
-          console.log(ex);
-      }
+    } catch (ex) {
+      console.log(ex);
+    }
   } else {
-      // No web storage Support :-(
+    // No web storage Support :-(
   }
 }
 
@@ -89,25 +89,25 @@ const Compose = () => {
 
     try {
       const config = {
-          method: 'POST',
-          headers: {
-              'Accept': 'application/json',
-              'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(paramdict)
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(paramdict)
       }
       console.log("Compose.js: fetching from " + `${process.env.REACT_APP_API_SERVICE_URL}/tweet`)
       //const response = await fetch("http://localhost:5000/tweet", config);
       //const response = await fetch(`${process.env.REACT_APP_BE_NETWORK}:${process.env.REACT_APP_BE_PORT}/tweet`, config);
-      const response = await fetch(`tweet`, config);
+      const response = await fetch(`${process.env.REACT_APP_API_SERVICE_URL}/tweet`, config);
       //const json = await response.json()
       if (response.ok) {
-          //return json
-          //return response
-          console.log("success on send.");
-          
+        //return json
+        //return response
+        console.log("success on send.");
+
       } else {
-          alert("response: " + response.toString());
+        alert("response: " + response.toString());
       }
 
       try {
@@ -138,11 +138,11 @@ const Compose = () => {
       "women",
       "men"
     ];
-    const img_gender = myArray[Math.floor(Math.random()*myArray.length)];
-    const img_index = Math.floor(Math.random() * 100) + 1 ;
+    const img_gender = myArray[Math.floor(Math.random() * myArray.length)];
+    const img_index = Math.floor(Math.random() * 100) + 1;
     const img_url = 'https://randomuser.me/api/portraits/' + img_gender + '/' + img_index.toString() + '.jpg';
-    
-    postTweet(username, tweet, priv, img_url);  
+
+    postTweet(username, tweet, priv, img_url);
     alert('tweet posted!');
   }
 
